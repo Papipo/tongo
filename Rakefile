@@ -15,14 +15,15 @@ Jeweler::Tasks.new do |gem|
   gem.name = "tongo"
   gem.homepage = "http://github.com/Papipo/tongo"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{ruby template engine based on radius and liquid}
+  gem.description = %Q{}
   gem.email = "papipo@gmail.com"
   gem.authors = ["Rodrigo Alvarez"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
   # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
-  #  gem.add_runtime_dependency 'jabber4r', '> 0.1'
-  #  gem.add_development_dependency 'rspec', '> 1.2.3'
+  gem.add_runtime_dependency 'temple'
+  gem.add_runtime_dependency 'tilt'
+  gem.add_runtime_dependency 'nokogiri'
 end
 Jeweler::RubygemsDotOrgTasks.new
 
