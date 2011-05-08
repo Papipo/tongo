@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Tongo::Parser do
   def compiled(src)
-    Tongo::Parser.new.compile(src)
+    Tongo::Parser.new.call(src)
   end
   
   it { compiled("Plain text").should      == [:multi, [:text, "Plain text"]] }
@@ -27,5 +27,5 @@ describe Tongo::Parser do
 end
 
 describe Tongo::Parser, "with a custom namespace" do
-  it { Tongo::Parser.new(:ns => 'pop').compile('<pop:custom />').should == [:multi, [:empty, 'custom', {}]] }
+  it { Tongo::Parser.new(:ns => 'pop').call('<pop:custom />').should == [:multi, [:empty, 'custom', {}]] }
 end

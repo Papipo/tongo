@@ -1,6 +1,8 @@
 module Tongo
   class Parser
-    def compile(src)
+    attr_reader :ns
+    
+    def call(src)
       src = "<root xmlns:#{@ns}=\"http://blog.codecaster.es\">#{src}</root>"
       doc = Nokogiri::XML::DocumentFragment.parse(src)
       traverse_children(doc.children)
@@ -26,10 +28,6 @@ module Tongo
       else
         nested_node(node)
       end
-    end
-    
-    def ns
-      @ns
     end
     
     def nested_node(e)

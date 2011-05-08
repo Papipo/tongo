@@ -1,7 +1,9 @@
 module Tongo
   class Engine < Temple::Engine
     use Tongo::Parser
-    use Temple::Filters::MultiFlattener
+    filter :MultiFlattener
+    filter :StaticMerger
+    filter :DynamicInliner
     use Tongo::Generator
   end
 end

@@ -4,7 +4,7 @@ module Tongo
     TOKENIZER     = /(\%\{.+?\})/
     INTERPOLATION = /\%\{(.+?)\}/
     
-    def compile(exp)
+    def call(exp)
       "\"#{compile!(exp)}\""
     end
     

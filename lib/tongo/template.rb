@@ -1,7 +1,3 @@
 module Tongo
-  class Template < Temple::Template
-    engine Tongo::Engine
-  end
+  Template = Temple::Templates::Tilt(Tongo::Engine, :register_as => 'tng')
 end
-
-Tilt.register 'tng', Tongo::Template
